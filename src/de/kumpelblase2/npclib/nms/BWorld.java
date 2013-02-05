@@ -1,23 +1,26 @@
 package de.kumpelblase2.npclib.nms;
 
-// original provided by Topcat, modified by kumpelblase2
+// original provided by Topcat, modified by kumpelblase2 , and modified again by MiniDigger ;D
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.minecraft.server.*;
+
+import net.minecraft.server.v1_4_R1.AxisAlignedBB;
+import net.minecraft.server.v1_4_R1.Entity;
+import net.minecraft.server.v1_4_R1.EntityPlayer;
+import net.minecraft.server.v1_4_R1.PlayerChunkMap;
+import net.minecraft.server.v1_4_R1.WorldProvider;
+import net.minecraft.server.v1_4_R1.WorldServer;
+
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.craftbukkit.CraftWorld;
-import org.bukkit.craftbukkit.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_4_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_4_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-/**
- * 
- * @author martin
- */
 public class BWorld
 {
 	private BServer server;
@@ -57,9 +60,9 @@ public class BWorld
 		}
 	}
 
-	public PlayerManager getPlayerManager()
+	public PlayerChunkMap getChunkMap() 
 	{
-		return this.wServer.getPlayerManager();
+		return wServer.getPlayerChunkMap();
 	}
 
 	public CraftWorld getCraftWorld()

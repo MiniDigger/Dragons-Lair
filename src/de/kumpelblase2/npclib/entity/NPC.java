@@ -1,9 +1,11 @@
 package de.kumpelblase2.npclib.entity;
 
-// original provided by Topcat, modified by kumpelblase2
+// original provided by Topcat, modified by kumpelblase2 , and modified again by MiniDigger ;D
 import java.util.ArrayList;
 import java.util.Iterator;
-import net.minecraft.server.*;
+import net.minecraft.server.v1_4_R1.Entity;
+import net.minecraft.server.v1_4_R1.EntityPlayer;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.event.player.PlayerMoveEvent;

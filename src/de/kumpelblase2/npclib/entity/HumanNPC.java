@@ -1,11 +1,11 @@
 package de.kumpelblase2.npclib.entity;
 
-// original provided by Topcat, modified by kumpelblase2
-import net.minecraft.server.EntityPlayer;
-import net.minecraft.server.Packet18ArmAnimation;
-import net.minecraft.server.WorldServer;
+// original provided by Topcat, modified by kumpelblase2 , and modified again by MiniDigger ;D
+import net.minecraft.server.v1_4_R1.EntityPlayer;
+import net.minecraft.server.v1_4_R1.Packet18ArmAnimation;
+import net.minecraft.server.v1_4_R1.WorldServer;
 import org.bukkit.*;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_4_R1.CraftServer;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.*;
 import org.getspout.spout.player.SpoutCraftPlayer;

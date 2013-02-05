@@ -22,15 +22,29 @@
  */
 package de.kumpelblase2.dragonslair;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.Proxy;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.UUID;
+import java.util.logging.Level;
+
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
-import java.io.*;
-import java.net.*;
-import java.util.*;
-import java.util.logging.Level;
 
 /**
  * <p>
@@ -178,7 +192,7 @@ public class Metrics
 			if(this.taskId >= 0)
 				return true;
 			// Begin hitting the server with glorious data
-			this.taskId = this.plugin.getServer().getScheduler().scheduleAsyncRepeatingTask(this.plugin, new Runnable()
+			this.taskId = this.plugin.getServer().getScheduler().runTaskTimerAsynchronously(this.plugin, new Runnable()
 			{
 				private boolean firstPost = true;
 
@@ -210,7 +224,7 @@ public class Metrics
 						Bukkit.getLogger().log(Level.INFO, "[Metrics] " + e.getMessage());
 					}
 				}
-			}, 0, PING_INTERVAL * 1200);
+			}, 0, PING_INTERVAL * 1200).getTaskId();
 			return true;
 		}
 	}

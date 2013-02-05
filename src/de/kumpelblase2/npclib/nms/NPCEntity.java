@@ -1,38 +1,43 @@
 package de.kumpelblase2.npclib.nms;
 
-// original provided by Topcat, modified by kumpelblase2
-import net.minecraft.server.*;
+// original provided by Topcat, modified by kumpelblase2 , and modified again by MiniDigger ;D
+import net.minecraft.server.v1_4_R1.DamageSource;
+import net.minecraft.server.v1_4_R1.Entity;
+import net.minecraft.server.v1_4_R1.EntityHuman;
+import net.minecraft.server.v1_4_R1.EntityPlayer;
+import net.minecraft.server.v1_4_R1.EnumGamemode;
+import net.minecraft.server.v1_4_R1.PlayerInteractManager;
+
 import org.bukkit.Bukkit;
+import org.bukkit.craftbukkit.v1_4_R1.entity.CraftEntity;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityTargetEvent;
 import de.kumpelblase2.dragonslair.DragonsLairMain;
 import de.kumpelblase2.npclib.NPCManager;
 
-/**
- * 
- * @author martin
- */
 public class NPCEntity extends EntityPlayer
 {
 	private int lastTargetId;
 	private long lastBounceTick;
 	private int lastBounceId;
 
-	public NPCEntity(final NPCManager npcManager, final BWorld world, final String s, final ItemInWorldManager itemInWorldManager)
-	{
+	public NPCEntity(NPCManager npcManager, BWorld world, String s, PlayerInteractManager itemInWorldManager) {
 		super(npcManager.getServer().getMCServer(), world.getWorldServer(), s, itemInWorldManager);
+
 		itemInWorldManager.b(EnumGamemode.SURVIVAL);
-		this.netServerHandler = new NPCNetHandler(npcManager, this);
-		this.lastTargetId = -1;
-		this.lastBounceId = -1;
-		this.lastBounceTick = 0;
-		this.fauxSleeping = true;
+
+		playerConnection = new NPCNetHandler(npcManager, this);
+		lastTargetId = -1;
+		lastBounceId = -1;
+		lastBounceTick = 0;
+
+		fauxSleeping = true;
 	}
 
-	public void setBukkitEntity(final org.bukkit.entity.Entity entity)
+	public void setBukkitEntity(CraftEntity entity) 
 	{
-		this.bukkitEntity = entity;
+		bukkitEntity = entity;
 	}
 
 	@Override

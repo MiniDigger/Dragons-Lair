@@ -54,6 +54,7 @@ public class GeneralConfigDialog extends FixedSetPrompt
 			arg0.getForWhom().sendRawMessage(ChatColor.GOLD + "----------------------------------------------");
 			arg0.getForWhom().sendRawMessage(ChatColor.GOLD + "  Running Dragons Lair v" + DragonsLairMain.getInstance().getDescription().getVersion());
 			arg0.getForWhom().sendRawMessage(ChatColor.GOLD + "  Made by kumpelblase2");
+			arg0.getForWhom().sendRawMessage(ChatColor.GOLD + "  Brought to 1.4.7 by MiniDigger");
 			arg0.getForWhom().sendRawMessage(ChatColor.GOLD + "  Have fun ;)");
 			arg0.getForWhom().sendRawMessage(ChatColor.GOLD + "----------------------------------------------");
 			return this;

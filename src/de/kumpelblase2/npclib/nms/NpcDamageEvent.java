@@ -1,6 +1,6 @@
 package de.kumpelblase2.npclib.nms;
 
-// original provided by Topcat, modified by kumpelblase2
+// original provided by Topcat, modified by kumpelblase2 , and modified again by MiniDigger ;D
 import org.bukkit.entity.Entity;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 

@@ -1,13 +1,9 @@
 package de.kumpelblase2.npclib.nms;
 
-// original provided by Topcat, modified by kumpelblase2
+// original provided by Topcat, modified by kumpelblase2 , and modified again by MiniDigger ;D
 import java.io.*;
 import java.net.Socket;
 
-/**
- * 
- * @author martin
- */
 public class NullSocket extends Socket
 {
 	@Override

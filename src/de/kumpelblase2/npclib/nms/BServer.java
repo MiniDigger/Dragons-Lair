@@ -1,15 +1,21 @@
 package de.kumpelblase2.npclib.nms;
 
-// original provided by Topcat, modified by kumpelblase2
+// original provided by Topcat, modified by kumpelblase2 , and modified again by MiniDigger ;D
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.minecraft.server.*;
+
+import net.minecraft.server.v1_4_R1.DedicatedPlayerList;
+import net.minecraft.server.v1_4_R1.DedicatedServer;
+import net.minecraft.server.v1_4_R1.MinecraftServer;
+import net.minecraft.server.v1_4_R1.PropertyManager;
+import net.minecraft.server.v1_4_R1.WorldServer;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_4_R1.CraftServer;
 import org.bukkit.craftbukkit.libs.jline.console.ConsoleReader;
 
 /**
@@ -49,9 +55,9 @@ public class BServer
 		this.cServer.dispatchCommand(sender, msg);
 	}
 
-	public ServerConfigurationManager getHandle()
+	public DedicatedPlayerList getHandle() 
 	{
-		return this.cServer.getHandle();
+		return cServer.getHandle();
 	}
 
 	public ConsoleReader getReader()

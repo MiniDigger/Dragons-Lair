@@ -443,7 +443,7 @@ public class DragonsLairMain extends JavaPlugin
 	public void startUpdateCheck()
 	{
 		if(this.getConfig().getBoolean("update-notice"))
-			Bukkit.getScheduler().scheduleAsyncRepeatingTask(this, new Runnable()
+			Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable()
 			{
 				@Override
 				public void run()
